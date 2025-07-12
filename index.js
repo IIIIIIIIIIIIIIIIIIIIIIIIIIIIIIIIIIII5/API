@@ -4,9 +4,10 @@ app.use(express.json());
 
 const playerIPs = {};
 
-app.post('/log-ip', (req, res) => {
-  const { userId } = req.body;
+app.get('/log-ip', (req, res) => {
+  const userId = req.query.userId;
   const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+
   if (userId) {
     playerIPs[userId] = ip;
     console.log(`Logged IP for UserId ${userId}: ${ip}`);
