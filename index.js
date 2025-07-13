@@ -22,5 +22,5 @@ app.post("/", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Webhook forwarder running on port ${PORT}`);
+    console.log(`Webhook running on port ${PORT}`);
 });
